@@ -24,6 +24,23 @@ export default function Hero() {
               Frontend Engineer
             </p>
           </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ 
+              opacity: [0.5, 1, 0.5],
+              scale: [0.8, 1.1, 0.8],
+              rotate: [0, 5, -5, 0]
+            }}
+            transition={{ 
+              duration: 2,
+              ease: "easeInOut",
+              repeat: Infinity,
+              repeatType: "reverse"
+            }}
+            className="mb-8 text-4xl md:text-6xl font-bold text-primary-highliter tracking-wider"
+          >
+            WORK IN PROGRESS...
+          </motion.div>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
