@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import * as motion from "framer-motion/client"
 import { FolderGit2, ExternalLink, Github } from 'lucide-react';
 
