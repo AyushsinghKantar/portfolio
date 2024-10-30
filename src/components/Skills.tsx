@@ -5,34 +5,32 @@ import {
   SiTypescript,
   SiNextdotjs,
   SiTailwindcss,
-  SiNodedotjs,
-  SiExpress,
-  SiGraphql,
+  SiStrapi,
   SiPostman,
   SiGit,
-  SiDocker,
-  SiJest,
   SiJenkins,
+  SiFlutter
 } from 'react-icons/si';
+import { IoLogoJavascript, IoLogoCss3, IoLogoHtml5 } from "react-icons/io5";
 
 const skills = {
   Frontend: [
+    { name: 'JavaScript', icon: IoLogoJavascript, color: '#F7DF1E' },
     { name: 'React', icon: SiReact, color: '#61DAFB' },
     { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
     { name: 'Next.js', icon: SiNextdotjs, color: '#000000' },
+    { name: 'Flutter', icon: SiFlutter, color: '#02569B' },
+    { name: 'HTML5', icon: IoLogoHtml5, color: '#E34F26' },
     { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4' },
+    { name: 'CSS', icon: IoLogoCss3, color: '#1572B6' },
   ],
   Backend: [
-    { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
-    { name: 'Express', icon: SiExpress, color: '#000000' },
-    { name: 'GraphQL', icon: SiGraphql, color: '#E10098' },
+    { name: 'Strapi', icon: SiStrapi, color: '#4945ff' },
     { name: 'REST APIs', icon: SiPostman, color: '#FF6C37' },
   ],
   'Tools & Others': [
     { name: 'Git', icon: SiGit, color: '#F05032' },
-    { name: 'Docker', icon: SiDocker, color: '#2496ED' },
-    { name: 'Jest', icon: SiJest, color: '#C21325' },
-    { name: 'CI/CD', icon: SiJenkins, color: '#D24939' },
+    { name: 'Jenkins', icon: SiJenkins, color: '#D24939' },
   ],
 };
 
@@ -54,7 +52,7 @@ export default function Skills() {
               className="flex items-center justify-center gap-3 mb-4"
             >
               <Cpu className="w-8 h-8 text-primary-600" />
-              <h2 className="text-3xl md:text-4xl font-bold text-sectionHadingColor-800">
+              <h2 className="text-2xl md:text-3xl font-bold text-primary-600">
                 Skills & Expertise
               </h2>
             </motion.div>

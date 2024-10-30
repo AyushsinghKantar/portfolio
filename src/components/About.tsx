@@ -11,7 +11,7 @@ export default function About() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="flex items-center gap-3 text-3xl md:text-4xl font-bold mb-12 text-sectionHadingColor-800">
+          <h2 className="flex items-center gap-3 text-2xl md:text-3xl font-bold mb-12 text-primary-600">
             <User className="w-8 h-8 text-primary-600" />
             About Me
           </h2>
@@ -23,19 +23,19 @@ export default function About() {
               viewport={{ once: true }}
               className="space-y-6"
             >
-              <p className="text-lg text-slate-600">
-                I&apos;m a passionate Frontend Engineer with a keen eye for creating
-                elegant and efficient web solutions. With years of experience in
-                web development, I specialize in building responsive and
-                user-friendly applications.
+              <p className="text-base md:text-lg text-slate-600 text-justify">
+              As a dedicated Frontend Engineer, I&apos;ve a passion for crafting visually
+      appealing and high-performance web applications. With hands-on experience
+      in technologies like React, Next.js, and Tailwind CSS, I specialize in
+      building responsive, user-focused solutions that make a lasting impact.
               </p>
               <div className="flex items-start gap-3">
                 <Code2 className="w-6 h-6 text-primary-600 mt-1" />
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-800">
+                  <h3 className="text-base md:text-lg font-semibold text-slate-800">
                     Technical Excellence
                   </h3>
-                  <p className="text-slate-600">
+                  <p className="text-slate-600 text-sm md:text-base">
                     Committed to writing clean, maintainable code and staying
                     current with the latest web technologies.
                   </p>
@@ -44,10 +44,10 @@ export default function About() {
               <div className="flex items-start gap-3">
                 <Rocket className="w-6 h-6 text-primary-600 mt-1" />
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-800">
+                  <h3 className="text-base md:text-lg font-semibold text-slate-800">
                     Innovation Driven
                   </h3>
-                  <p className="text-slate-600">
+                  <p className="text-slate-600 text-sm md:text-base">
                     Always exploring new ways to push the boundaries of web
                     development and create exceptional user experiences.
                   </p>
@@ -63,29 +63,41 @@ export default function About() {
               <h3 className="text-xl font-semibold text-slate-800 mb-4">
                 Quick Facts
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-3 text-base">
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-primary-600 rounded-full" />
                   <span className="text-slate-600">
-                    5+ years of development experience
+                  1.6+ years of experience in frontend development
                   </span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-primary-600 rounded-full" />
                   <span className="text-slate-600">
-                    Worked with 20+ global clients
+                  Proficient in React.js, Next.js, and Tailwind CSS
                   </span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-primary-600 rounded-full" />
                   <span className="text-slate-600">
-                    Led 10+ successful projects
+                  Developed and optimized e-commerce and SaaS applications
                   </span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-primary-600 rounded-full" />
                   <span className="text-slate-600">
-                    Regular tech conference speaker
+                  Integrated payment solutions with Stripe API
+                  </span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-primary-600 rounded-full" />
+                  <span className="text-slate-600">
+                  Hands-on experience with Strapi CMS and Prisma ORM
+                  </span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-primary-600 rounded-full" />
+                  <span className="text-slate-600">
+                  Focused on performance optimization and user experience
                   </span>
                 </li>
               </ul>

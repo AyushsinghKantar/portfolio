@@ -8,13 +8,13 @@ const experiences = [
     period: 'Sep 2023 - Present',
     description:
     <>
-    <p className="text-[14px] md:text-[16px] text-slate-600 mt-5">
+    <p className="text-sm md:text-base text-slate-600 mt-5">
     🚀 <strong>From Intern to Frontend Engineer : </strong>I began my journey with Pidilite as an intern and transitioned into a full-time role due to my contributions and passion for building intuitive, high-performance applications.
     </p>
-    <p className="text-[14px] md:text-[16px] text-slate-600 mt-5">
+    <p className="text-sm md:text-base text-slate-600 mt-5">
     📈 <strong>Key Contributions: </strong> I’ve played a central role in developing a sophisticated app tailored for interior contractors. This application includes complex features such as:
     </p>
-      <ul className="list-disc list-inside text-[14px] md:text-[16px] text-slate-600 mt-5">
+      <ul className="list-disc list-inside text-sm md:text-base text-slate-600 mt-5">
         <li style={{ textIndent: '-1.4em', paddingLeft: '1.2em' }}>
   <strong>Digital Profile:</strong> Tools for contractors to manage and share thier work experience, portfolio, and skills. This feature allows contractors to showcase their expertise and design elements seamlessly.
 </li>
@@ -25,7 +25,7 @@ const experiences = [
 <strong>Quotation Generator:</strong> An efficient tool for generating detailed interior project quotes, saving contractors time and improving accuracy.
 </li>
       </ul>
-    <p className="text-[14px] md:text-[16px] text-slate-600 mt-5">This role has allowed me to hone my skills in frontend development, collaborate with a talented team, and continuously deliver value through meaningful solutions for the industry.</p>
+    <p className="text-sm md:text-base text-slate-600 mt-5">This role has allowed me to hone my skills in frontend development, collaborate with a talented team, and continuously deliver value through meaningful solutions for the industry.</p>
     </>,
     skills: ['JavaScript', 'TypeScript', 'React', 'Next.js', 'HTML5', 'CSS', 'SCSS','Tailwind CSS', 'PWA', 'Strapi CMS', 'Flutter', 'REST APIS'],
   },
@@ -49,7 +49,7 @@ export default function Experience() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="flex items-center gap-3 text-3xl md:text-4xl font-bold mb-12 text-sectionHadingColor-800">
+          <h2 className="flex items-center gap-3 text-2xl md:text-3xl font-bold mb-12 text-primary-600">
             <Briefcase className="w-8 h-8 text-primary-600" />
             Work Experience
           </h2>

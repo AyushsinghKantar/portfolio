@@ -1,5 +1,5 @@
 import * as motion from "framer-motion/client"
-import { Mail, Linkedin, Github, Twitter } from 'lucide-react';
+import { Mail, Linkedin, Github, X } from 'lucide-react';
 
 export default function Contact() {
   return (
@@ -11,8 +11,8 @@ export default function Contact() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="flex items-center gap-3 text-3xl md:text-4xl font-bold mb-12 text-slate-800">
-            <Mail className="w-8 h-8 text-red-600" />
+          <h2 className="flex items-center gap-3 text-2xl md:text-3xl font-bold mb-12 text-primary-600">
+            <Mail className="w-8 h-8 text-primary-600" />
             Get In Touch
           </h2>
 
@@ -29,22 +29,28 @@ export default function Contact() {
               </p>
               <div className="flex gap-4">
                 <a
-                  href="#"
-                  className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-red-600 hover:text-white transition-colors"
+                  href="https://github.com/AjmalAli10"
+                  aria-label="LinkedIn"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:text-primary-600 hover:bg-primary-50 transition-colors border border-slate-200"
                 >
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a
-                  href="#"
-                  className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-red-600 hover:text-white transition-colors"
+                  href="https://www.linkedin.com/in/ajmal-ali10"
+                  aria-label="Github"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:text-black hover:bg-primary-50 transition-colors border border-slate-200"
                 >
                   <Github className="w-5 h-5" />
                 </a>
                 <a
-                  href="#"
-                  className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-red-600 hover:text-white transition-colors"
+                  href="https://x.com/softEng_ajmal"
+                  aria-label="X"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:text-black hover:bg-primary-50 transition-colors border border-slate-200"
                 >
-                  <Twitter className="w-5 h-5" />
+                  <X className="w-5 h-5" />
                 </a>
               </div>
             </motion.div>

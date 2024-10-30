@@ -44,7 +44,7 @@ export default function Projects() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="flex items-center gap-3 text-3xl md:text-4xl font-bold mb-12 text-sectionHadingColor-800">
+          <h2 className="flex items-center gap-3 text-2xl md:text-3xl font-bold mb-12 text-primary-600">
             <FolderGit2 className="w-8 h-8 text-primary-600" />
             Featured Projects
           </h2>
