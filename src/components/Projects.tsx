@@ -93,7 +93,7 @@ export default function Projects() {
                     <motion.a
                       href={project.liveUrl}
                       whileHover={{ scale: 1.02 }}
-                      className="flex-1 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-6 py-3 rounded-lg font-medium shadow-sm hover:shadow transition-all duration-300 flex items-center justify-center gap-2 group"
+                      className="flex-1 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white md:px-6 py-3 rounded-lg font-medium shadow-sm hover:shadow transition-all duration-300 flex items-center justify-center gap-2 group"
                     >
                       <ExternalLink className="w-4 h-4 group-hover:rotate-12 transition-transform" />
                       Live Demo
@@ -101,7 +101,7 @@ export default function Projects() {
                     <motion.a
                       href={project.githubUrl}
                       whileHover={{ scale: 1.02 }}
-                      className="flex-1 bg-gradient-to-r from-slate-800 to-slate-900 hover:from-slate-900 hover:to-black text-white px-6 py-3 rounded-lg font-medium shadow-sm hover:shadow transition-all duration-300 flex items-center justify-center gap-2 group"
+                      className="flex-1 bg-gradient-to-r from-slate-800 to-slate-900 hover:from-slate-900 hover:to-black text-white md:px-6 py-3 rounded-lg font-medium shadow-sm hover:shadow transition-all duration-300 flex items-center justify-center gap-2 group"
                     >
                       <Github className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
                       Source Code

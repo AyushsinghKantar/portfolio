@@ -57,7 +57,7 @@ export default function Hero() {
           >
             <a
               href="#contact"
-              className="group px-8 py-4 bg-primary-highliter text-white rounded-full flex items-center justify-center gap-2 hover:bg-primary-700 transition-all duration-300"
+              className="group px-8 py-2 md:py-4 bg-primary-highliter text-white rounded-full flex items-center justify-center gap-2 hover:bg-primary-700 transition-all duration-300"
             >
               Let&apos;s Talk
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
