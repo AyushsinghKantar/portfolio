@@ -1,6 +1,43 @@
-import { clsx, type ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
-
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+import { Metadata } from "next";
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
+}
+
+export function constructMetadata({
+  title = "Ajmal Ali | Frontend Engineer | React & Next.js Developer | Web Design",
+  description = "Explore Ajmal Ali's portfolio showcasing expertise in frontend development, React, Next.js, web design, Flutter, React Native ,UI/UX design, and performance optimization. Discover innovative, responsive web applications that enhance user engagement and drive conversions.",
+  image = "/assets/profile-pic.jpeg",
+  icons = "/favicon.ico",
+}: {
+  title?: string;
+  description?: string;
+  image?: string;
+  icons?: string;
+} = {}): Metadata {
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: [
+        {
+          url: image,
+        },
+      ],
+      url: "https://www.ajmalali.me/",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image],
+      creator: "@softEng_ajmal",
+    },
+    icons,
+    metadataBase: new URL("https://www.ajmalali.me/"),
+  };
 }
