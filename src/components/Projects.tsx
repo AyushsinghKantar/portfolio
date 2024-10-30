@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import * as motion from "framer-motion/client"
-import { FolderGit2, ExternalLink, Github } from 'lucide-react';
+import { FolderGit2, ExternalLink, Github, Code2 } from 'lucide-react';
 
 const projects = [
   {
@@ -71,31 +71,41 @@ export default function Projects() {
                     {project.title}
                   </h3>
                   <p className="text-slate-600 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag) => (
-                      <span
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tags.map((tag, tagIndex) => (
+                      <motion.span
                         key={tag}
-                        className="px-3 py-1 bg-white-50 text-slate-600 rounded text-sm border"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{
+                          delay: index * 0.1 + tagIndex * 0.1,
+                          duration: 0.2,
+                        }}
+                        className="px-4 py-1.5 bg-gradient-to-r from-primary-50 to-primary-100 hover:from-primary-100 hover:to-primary-200 text-primary-700 rounded-lg text-sm font-medium border border-primary-200 shadow-sm flex items-center gap-1.5 transition-colors"
                       >
+                        <Code2 className="w-3.5 h-3.5" />
                         {tag}
-                      </span>
+                      </motion.span>
                     ))}
                   </div>
                   <div className="flex gap-4">
-                    <a
+                    <motion.a
                       href={project.liveUrl}
-                      className="flex items-center gap-2 text-slate-600 hover:text-primary-600 transition-colors"
+                      whileHover={{ scale: 1.02 }}
+                      className="flex-1 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-6 py-3 rounded-lg font-medium shadow-sm hover:shadow transition-all duration-300 flex items-center justify-center gap-2 group"
                     >
-                      <ExternalLink className="w-4 h-4" />
+                      <ExternalLink className="w-4 h-4 group-hover:rotate-12 transition-transform" />
                       Live Demo
-                    </a>
-                    <a
+                    </motion.a>
+                    <motion.a
                       href={project.githubUrl}
-                      className="flex items-center gap-2 text-slate-600 hover:text-primary-600 transition-colors"
+                      whileHover={{ scale: 1.02 }}
+                      className="flex-1 bg-gradient-to-r from-slate-800 to-slate-900 hover:from-slate-900 hover:to-black text-white px-6 py-3 rounded-lg font-medium shadow-sm hover:shadow transition-all duration-300 flex items-center justify-center gap-2 group"
                     >
-                      <Github className="w-4 h-4" />
+                      <Github className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
                       Source Code
-                    </a>
+                    </motion.a>
                   </div>
                 </div>
               </motion.div>

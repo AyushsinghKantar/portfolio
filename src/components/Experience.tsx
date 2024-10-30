@@ -1,30 +1,41 @@
 import * as motion from "framer-motion/client"
-import { Briefcase } from 'lucide-react';
+import { Briefcase, Code2 } from 'lucide-react';
 
 const experiences = [
   {
-    title: 'Senior Frontend Engineer',
-    company: 'Tech Innovation Labs',
-    period: '2021 - Present',
+    title: 'Frontend Engineer',
+    company: 'Pidilite Industry Ltd.',
+    period: 'Sep 2023 - Present',
     description:
-      'Leading frontend development for enterprise applications, mentoring junior developers, and implementing modern web technologies.',
-    skills: ['React', 'TypeScript', 'Next.js', 'GraphQL'],
+    <>
+    <p className="text-[14px] md:text-[16px] text-slate-600 mt-5">
+    🚀 <strong>From Intern to Frontend Engineer : </strong>I began my journey with Pidilite as an intern and transitioned into a full-time role due to my contributions and passion for building intuitive, high-performance applications.
+    </p>
+    <p className="text-[14px] md:text-[16px] text-slate-600 mt-5">
+    📈 <strong>Key Contributions: </strong> I’ve played a central role in developing a sophisticated app tailored for interior contractors. This application includes complex features such as:
+    </p>
+      <ul className="list-disc list-inside text-[14px] md:text-[16px] text-slate-600 mt-5">
+        <li style={{ textIndent: '-1.4em', paddingLeft: '1.2em' }}>
+  <strong>Digital Profile:</strong> Tools for contractors to manage and share thier work experience, portfolio, and skills. This feature allows contractors to showcase their expertise and design elements seamlessly.
+</li>
+<li style={{ textIndent: '-1.4em', paddingLeft: '1.2em' }} className="">
+<strong>Procurement System:</strong> Streamlined procurement to support contractors in ordering and managing materials.
+</li>
+<li style={{ textIndent: '-1.4em', paddingLeft: '1.2em' }}>
+<strong>Quotation Generator:</strong> An efficient tool for generating detailed interior project quotes, saving contractors time and improving accuracy.
+</li>
+      </ul>
+    <p className="text-[14px] md:text-[16px] text-slate-600 mt-5">This role has allowed me to hone my skills in frontend development, collaborate with a talented team, and continuously deliver value through meaningful solutions for the industry.</p>
+    </>,
+    skills: ['JavaScript', 'TypeScript', 'React', 'Next.js', 'HTML5', 'CSS', 'SCSS','Tailwind CSS', 'PWA', 'Strapi CMS', 'Flutter', 'REST APIS'],
   },
   {
-    title: 'Frontend Developer',
-    company: 'Digital Solutions Agency',
-    period: '2019 - 2021',
+    title: 'Frontend Engineer Intern',
+    company: 'Pidilite Industry Ltd.',
+    period: 'Mar 2023 - Aug 2023',
     description:
-      'Developed responsive web applications and collaborated with design teams to create seamless user experiences.',
-    skills: ['React', 'JavaScript', 'Tailwind CSS', 'REST APIs'],
-  },
-  {
-    title: 'Junior Web Developer',
-    company: 'StartUp Hub',
-    period: '2018 - 2019',
-    description:
-      'Built and maintained client websites, implemented responsive designs, and optimized web performance.',
-    skills: ['HTML', 'CSS', 'JavaScript', 'WordPress'],
+     <p className="text-[14px] md:text-[16px] text-slate-600">Worked as a Frontend Engineer Intern.</p>,
+    skills: ['React', 'JavaScript', 'Tailwind CSS', 'Bootstrap', 'Material UI'],
   },
 ];
 
@@ -76,15 +87,23 @@ export default function Experience() {
                   <p className="text-lg font-medium text-slate-600 mb-3">
                     {exp.company}
                   </p>
-                  <p className="text-slate-600 mb-4">{exp.description}</p>
+                  <div className="mb-4">{exp.description}</div>
                   <div className="flex flex-wrap gap-2">
-                    {exp.skills.map((skill) => (
-                      <span
+                  {exp.skills.map((skill, skillIndex) => (
+                      <motion.span
                         key={skill}
-                        className="px-3 py-1 bg-red-50 text-primary-600 rounded-full text-sm"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{
+                          delay: index * 0.1 + skillIndex * 0.1,
+                          duration: 0.2,
+                        }}
+                        className="px-4 py-1.5 bg-gradient-to-r from-primary-50 to-primary-100 hover:from-primary-100 hover:to-primary-200 text-primary-700 rounded-lg text-sm font-medium border border-primary-200 shadow-sm flex items-center gap-1.5 transition-colors"
                       >
+                        <Code2 className="w-3.5 h-3.5" />
                         {skill}
-                      </span>
+                      </motion.span>
                     ))}
                   </div>
                 </div>
