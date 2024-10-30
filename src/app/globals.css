@@ -87,7 +87,6 @@ body {
   }
 
   body {
-    font-family: 'Sora', sans-serif;
     @apply bg-slate-50 text-slate-900;
   }
 }

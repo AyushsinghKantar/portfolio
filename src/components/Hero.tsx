@@ -17,29 +17,12 @@ export default function Hero() {
             transition={{ delay: 0.2 }}
             className="mb-8"
           >
-            <h1 className="text-6xl md:text-8xl font-bold mb-6 gradient-text text-primary-highliter">
+            <h1 className="text-5xl md:text-8xl font-bold mb-6 gradient-text text-primary-highliter">
               Ajmal Ali
             </h1>
             <p className="text-2xl md:text-3xl text-slate-600">
               Frontend Engineer
             </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ 
-              opacity: [0.5, 1, 0.5],
-              scale: [0.8, 1.1, 0.8],
-              rotate: [0, 5, -5, 0]
-            }}
-            transition={{ 
-              duration: 2,
-              ease: "easeInOut",
-              repeat: Infinity,
-              repeatType: "reverse"
-            }}
-            className="mb-8 text-4xl md:text-6xl font-bold text-primary-highliter tracking-wider"
-          >
-            WORK IN PROGRESS...
           </motion.div>
           <motion.p
             initial={{ opacity: 0 }}
