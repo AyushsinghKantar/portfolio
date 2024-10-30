@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Next.js",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "runtimeExecutable": "pnpm", // Specify pnpm as the runtime
+            "args": ["run", "dev"], // Run the dev script
+            "cwd": "${workspaceFolder}", // Set the current working directory
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ],
+            "runtimeArgs": ["--inspect-brk"], // Optional: for debugging
+            "env": {
+                "NODE_ENV": "development" // Set environment variable if needed
+            }
+        }
+    ]
+}

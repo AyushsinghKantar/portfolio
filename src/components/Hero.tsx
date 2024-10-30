@@ -51,10 +51,10 @@ export default function Hero() {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
-                href="#projects"
+                href="#experience"
                 className="px-8 py-4 bg-white text-slate-800 rounded-xl hover:bg-slate-50 transition-all duration-300 border border-slate-200 shadow-sm hover:shadow flex items-center justify-center"
               >
-                View Projects
+                View Experience
               </a>
             </motion.div>
 
