@@ -1,5 +1,5 @@
 'use client'
-import * as motion from "framer-motion/client"
+import { motion } from "framer-motion"
 import { Mail, Linkedin, Github, X } from 'lucide-react';
 import {z} from 'zod'
 import emailjs from '@emailjs/browser';

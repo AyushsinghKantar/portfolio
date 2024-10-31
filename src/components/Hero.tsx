@@ -110,7 +110,8 @@ export default function Hero() {
                      alt="Ajmal Ali"
                      className="w-full h-full object-cover"
                      fill
-                     priority= {true}
+                     priority
+                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                  />
               </div>
               <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-slate-200" />
