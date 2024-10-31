@@ -1,9 +1,4 @@
-import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
 import { Metadata } from "next";
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
 
 export function constructMetadata({
   title = "Ajmal Ali | Frontend Engineer | React & Next.js Developer | Web Design",
