@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export function constructMetadata({
-  title = "Ajmal Ali | Frontend Engineer | React & Next.js Developer | Web Design",
-  description = "Explore Ajmal Ali's portfolio showcasing expertise in frontend development, React, Next.js, web design, Flutter, React Native ,UI/UX design, and performance optimization. Discover innovative, responsive web applications that enhance user engagement and drive conversions.",
+  title = "Ajmal Ali | Frontend Engineer | Developer",
+  description = "Explore Ajmal's portfolio showcasing expertise in frontend development, React, Next.js, web design, Flutter, React Native ,UI/UX design, and performance optimization. Discover innovative, responsive web applications that enhance user engagement and drive conversions.",
   image = "/assets/profile-pic.jpeg",
   icons = "/favicon.ico",
 }: {
