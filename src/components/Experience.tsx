@@ -94,6 +94,7 @@ export default function Experience() {
                         key={skill}
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
                         whileHover={{ scale: 1.05 }}
                         transition={{
                           delay: index * 0.1 + skillIndex * 0.1,

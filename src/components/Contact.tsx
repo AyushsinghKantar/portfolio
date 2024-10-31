@@ -3,25 +3,41 @@ import * as motion from "framer-motion/client"
 import { Mail, Linkedin, Github, X } from 'lucide-react';
 import {z} from 'zod'
 import emailjs from '@emailjs/browser';
+import toast from 'react-hot-toast';
+import { useState } from "react";
+
 const userSchema = z.object({
-  name: z.string(),
-  email_from: z.string(),
-  message: z.string(),
-})
+  name: z.string().min(1, { message: "Name is required." }),
+  email_from: z.string().min(1, { message: "Email is required." }),
+  message: z.string().min(1, { message: "Message is required." })
+});
 export default function Contact() {
-  function formAction(formData: FormData) {
-    const formValues = Object.fromEntries(formData)
-    const result = userSchema.safeParse(formValues)
-    if (!result.success) {
-      return;
-    }
-    console.log(result)
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  async function formAction(formData: FormData) {
+    const formValues = Object.fromEntries(formData);
+    const result = userSchema.safeParse(formValues);
+    
+  
+      if (!result.success) {
+        toast.error('Please fill in all fields correctly.', {
+          duration: 1000,
+          style: {
+            background: '#EF4444',
+            color: '#fff',
+          },
+        });
+        return;
+      }
+    
+
     const templateParams = {
       name: result.data.name,
       message: result.data.message,
       email_from: result.data.email_from,
     };
-   console.log(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string)
+
+    setIsSubmitting(true);
+
     emailjs
       .send(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string, process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string, templateParams, {
         publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string,
@@ -29,12 +45,29 @@ export default function Contact() {
       .then(
         () => {
           console.log('SUCCESS!');
+          toast.success('Thank you for reaching out! Your message has been received, and I\’ll respond as soon as possible.', {
+            duration: 2000,
+            style: {
+              background: '#10B981',
+              color: '#fff',
+            },
+          });
         },
         (error) => {
-          console.log('FAILED...', error.text);
-        },
-      );
-
+          console.error('FAILED...', error);
+          toast.error('Failed to send message. Please try again.', {
+            duration: 2000,
+            style: {
+              background: '#EF4444',
+              color: '#fff',
+            },
+          });
+          
+        }
+      )
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   }
   return (
     <section id="contact" className="py-20 bg-slate-50">
@@ -65,6 +98,7 @@ export default function Contact() {
                 <a
                   href="https://www.linkedin.com/in/ajmal-ali10"
                   aria-label="LinkedIn"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:text-primary-600 hover:bg-primary-50 transition-colors border border-slate-200"
                 >
@@ -73,6 +107,7 @@ export default function Contact() {
                 <a
                   href="https://github.com/AjmalAli10"
                   aria-label="Github"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:text-black hover:bg-primary-50 transition-colors border border-slate-200"
                 >
@@ -81,6 +116,7 @@ export default function Contact() {
                 <a
                   href="https://x.com/softEng_ajmal"
                   aria-label="X"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:text-black hover:bg-primary-50 transition-colors border border-slate-200"
                 >
@@ -134,7 +170,14 @@ export default function Contact() {
                 type="submit"
                 className="w-full px-8 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
               >
-                Send Message
+               {isSubmitting ? (
+              <>
+                <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                Sending...
+              </>
+            ) : (
+              'Send Message'
+            )}
               </button>
             </motion.form>
           </div>
