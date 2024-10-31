@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import * as motion from "framer-motion/client"
 import { FolderGit2, ExternalLink, Github, Code2 } from 'lucide-react';
+import Image from "next/image";
 
 const projects = [
   {
@@ -59,11 +60,15 @@ export default function Projects() {
                 transition={{ delay: index * 0.1 }}
                 className="group bg-slate-50 relative rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <div className="aspect-video overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                <div className="aspect-video overflow-hidden relative">
+                 <Image
+                 src={project.image}
+                 alt={project.title}
+                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                 priority={false}
+                 fill
+                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                 unoptimized={true}
                   />
                 </div>
                 <div className="p-6">

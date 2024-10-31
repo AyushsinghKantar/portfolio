@@ -110,7 +110,7 @@ export default function Hero() {
                      alt="Ajmal Ali"
                      className="w-full h-full object-cover"
                      fill
-                     priority
+                     priority={true}
                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                  />
               </div>
