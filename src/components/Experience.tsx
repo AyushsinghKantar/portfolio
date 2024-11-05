@@ -3,39 +3,112 @@ import { Briefcase, Code2 } from 'lucide-react';
 
 const experiences = [
   {
-    title: 'Frontend Engineer',
-    company: 'Pidilite Industry Ltd.',
-    period: 'Sep 2023 - Present',
-    description:
-    <>
-    <p className="text-sm md:text-base text-slate-600 mt-5">
-    🚀 <strong>From Intern to Frontend Engineer : </strong>I began my journey with Pidilite as an intern and transitioned into a full-time role due to my contributions and passion for building intuitive, high-performance applications.
-    </p>
-    <p className="text-sm md:text-base text-slate-600 mt-5">
-    📈 <strong>Key Contributions: </strong> I’ve played a central role in developing a sophisticated app tailored for interior contractors. This application includes complex features such as:
-    </p>
-      <ul className="list-disc list-inside text-sm md:text-base text-slate-600 mt-5">
-        <li style={{ textIndent: '-1.4em', paddingLeft: '1.2em' }}>
-  <strong>Digital Profile:</strong> Tools for contractors to manage and share thier work experience, portfolio, and skills. This feature allows contractors to showcase their expertise and design elements seamlessly.
-</li>
-<li style={{ textIndent: '-1.4em', paddingLeft: '1.2em' }} className="">
-<strong>Procurement System:</strong> Streamlined procurement to support contractors in ordering and managing materials.
-</li>
-<li style={{ textIndent: '-1.4em', paddingLeft: '1.2em' }}>
-<strong>Quotation Generator:</strong> An efficient tool for generating detailed interior project quotes, saving contractors time and improving accuracy.
-</li>
-      </ul>
-    <p className="text-sm md:text-base text-slate-600 mt-5">This role has allowed me to hone my skills in frontend development, collaborate with a talented team, and continuously deliver value through meaningful solutions for the industry.</p>
-    </>,
-    skills: ['JavaScript', 'TypeScript', 'React', 'Next.js', 'HTML5', 'CSS', 'SCSS','Tailwind CSS', 'PWA', 'Strapi CMS', 'Flutter', 'REST APIS'],
+    title: "Seniour Frontend Engineer",
+    company: "Paexskin Solution Pvt Ltd.",
+    period: "Oct 2021 - Present",
+    description: (
+      <>
+        <p className="text-sm md:text-base text-slate-600 mt-5">
+          🚀 <strong>Seniour Frontend Engineer : </strong>I began my journey
+          with Paexskin as an Associate Software developer and promoted to a
+          Seniour role due to my contributions and passion for building
+          intuitive, high-performance applications.
+        </p>
+        <p className="text-sm md:text-base text-slate-600 mt-5">
+          📈 <strong>Key Contributions: </strong> I’ve played a central role in
+          developing a sophisticated Web app tailored for interior contractors.
+          This application includes complex features such as:
+        </p>
+        <ul className="list-disc list-inside text-sm md:text-base text-slate-600 mt-5">
+          <li style={{ textIndent: "-1.4em", paddingLeft: "1.2em" }}>
+            <strong>Implementation of Highcharts:</strong> I integrated
+            Highcharts to display different data sets across various chart types
+            and implemented both local and global filters, allowing dynamic data
+            and chart updates based on filter selections. This improved user
+            experience by enabling flexible data visualization and analysis.
+          </li>
+          <li
+            style={{ textIndent: "-1.4em", paddingLeft: "1.2em" }}
+            className=""
+          >
+            <strong>Web Worker Integration:</strong> I integrated a Web Worker
+            to handle calculations for large data nodes in the background,
+            improving rendering performance and ensuring a smoother user
+            experience by offloading heavy processing tasks.
+          </li>
+          <li style={{ textIndent: "-1.4em", paddingLeft: "1.2em" }}>
+            <strong>Performance improvement:</strong> I optimized the
+            application by implementing lazy loading to reduce initial load
+            times, using Web Workers for background processing of large data
+            sets, and managing state with NgRx for efficient data handling.
+            These enhancements significantly improved the application's
+            responsiveness and overall performance.
+          </li>
+        </ul>
+        <p className="text-sm md:text-base text-slate-600 mt-5">
+          This role has allowed me to hone my skills in frontend development,
+          collaborate with a talented team, and continuously deliver value
+          through meaningful solutions for the industry.
+        </p>
+      </>
+    ),
+    skills: [
+      "JavaScript",
+      "TypeScript",
+      "Angular",
+      "Underscore.js",
+      "Web worker",
+      "NgRx",
+      "RxJS",
+      "Http Module",
+      "Highcharts",
+      "HTML5",
+      "CSS",
+      "SCSS",
+      "Bootstrap",
+    ],
   },
   {
-    title: 'Frontend Engineer Intern',
-    company: 'Pidilite Industry Ltd.',
-    period: 'Mar 2023 - Aug 2023',
-    description:
-     <p className="text-[14px] md:text-[16px] text-slate-600">Worked as a Frontend Engineer Intern.</p>,
-    skills: ['React', 'JavaScript', 'Tailwind CSS', 'Bootstrap', 'Material UI'],
+    title: " Juniour Frontend Engineer",
+    company: "Akashic Soft Pvt Ltd.",
+    period: "SEP 2020 - OCT 2021",
+    description: (
+      <>
+      <p className="text-sm md:text-base text-slate-600 mt-5">
+        🚀 <strong>Juniour Frontend Engineer : </strong>I began my journey
+        with Akashic as an interner developer and transition into a
+        full time role due to my contributions and passion for building
+        intuitive, high-performance applications.
+      </p>
+      <p className="text-sm md:text-base text-slate-600 mt-5">
+        📈 <strong>Key Contributions: </strong> As a junior developer, I had the opportunity to contribute to various features of an advanced web application.
+         This experience allowed me to explore and work on some backend components using Node.js. 
+         Some of the key features I worked on include:
+      </p>
+      <ul className="list-disc list-inside text-sm md:text-base text-slate-600 mt-5">
+        <li style={{ textIndent: "-1.4em", paddingLeft: "1.2em" }}>
+          <strong>Socket Connection :</strong> I implemented a socket connection to enable a seamless chat experience within the application. 
+          I also designed the chat interface, allowing users to send messages, share documents and images, and view their chat history..
+        </li>
+        <li
+          style={{ textIndent: "-1.4em", paddingLeft: "1.2em" }}
+          className=""
+        >
+          <strong>Auth Guard Integration for Authorization:</strong> I integrated Auth Guards to secure routes and ensure proper authorization within the application, 
+          restricting access based on user roles and permissions for enhanced security and user management.
+        </li>
+        <li style={{ textIndent: "-1.4em", paddingLeft: "1.2em" }}>
+          <strong>Handling REST API :</strong> I managed REST API integrations for seamless data exchange between the frontend and backend, 
+          ensuring efficient data retrieval, updates, and error handling for a smooth user experience.
+        </li>
+      </ul>
+      <p className="text-sm md:text-base text-slate-600 mt-5">
+      In this role, I've strengthened my frontend development expertise, gained exposure to backend code, 
+      worked closely with a talented team, and contributed valuable solutions that make a real impact in the industry.
+      </p>
+    </>
+    ),
+    skills: ["Angular", "NgRx","RxJS", "Http Module",, "JavaScript", "Bootstrap" , "HTML5" , "SCSS", "Jquery" , "socket.io", "Node.js" ],
   },
 ];
 

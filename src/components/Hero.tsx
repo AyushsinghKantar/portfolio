@@ -1,5 +1,6 @@
 import * as motion from "framer-motion/client"
-import { ArrowRight, Github, Linkedin,  X  } from 'lucide-react';
+import { ArrowRight,  X  } from 'lucide-react';
+import { FaGithub , FaLinkedin , FaDownload } from "react-icons/fa";
 import Image from "next/image";
 
 export default function Hero() {
@@ -29,7 +30,7 @@ export default function Hero() {
                 </motion.span>
               </div>
               <h1 className="text-5xl md:text-7xl font-bold mb-6">
-                <span className="gradient-text">Ajmal Ali</span>
+                <span className="gradient-text">Ayush Singh</span>
                 <span className="block text-slate-800 mt-2">Frontend Engineer</span>
               </h1>
               <p className="text-base md:text-lg text-slate-600 mb-8 leading-relaxed">
@@ -65,9 +66,9 @@ export default function Hero() {
               className="flex gap-4"
             >
               {[
-                { icon: Github, href: 'https://github.com/AjmalAli10', label: 'GitHub' },
-                { icon: Linkedin, href: 'https://www.linkedin.com/in/ajmal-ali10', label: 'LinkedIn' },
-                { icon: X, href: 'https://x.com/softEng_ajmal', label: 'Twitter' },
+                { icon: FaGithub, href: 'https://github.com/Ayushsingh4', label: 'GitHub' },
+                { icon: FaLinkedin, href: 'https://www.linkedin.com/in/ayush-kumar-singh-7b2605175/', label: 'LinkedIn' },
+                { icon: X, href: 'https://x.com/AyushSingh77026', label: 'Twitter' },
               ].map(({ icon: Icon, href, label }, index) => (
                 <a
                   key={label}

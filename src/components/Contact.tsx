@@ -1,34 +1,39 @@
-'use client'
-import { motion } from "framer-motion"
+'use client';
+import { useEffect, useState } from "react";
 import { Mail, Linkedin, Github, X } from 'lucide-react';
-import {z} from 'zod'
+import { z } from 'zod';
 import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
-import { useState } from "react";
 
 const userSchema = z.object({
   name: z.string().min(1, { message: "Name is required." }),
   email_from: z.string().min(1, { message: "Email is required." }),
   message: z.string().min(1, { message: "Message is required." })
 });
+
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [hasHydrated, setHasHydrated] = useState(false);
+
+  // Ensure component only fully renders on the client
+  useEffect(() => {
+    setHasHydrated(true);
+  }, []);
+
   async function formAction(formData: FormData) {
     const formValues = Object.fromEntries(formData);
     const result = userSchema.safeParse(formValues);
-    
-  
-      if (!result.success) {
-        toast.error('Please fill in all fields correctly.', {
-          duration: 1000,
-          style: {
-            background: '#EF4444',
-            color: '#fff',
-          },
-        });
-        return;
-      }
-    
+
+    if (!result.success) {
+      toast.error('Please fill in all fields correctly.', {
+        duration: 1000,
+        style: {
+          background: '#EF4444',
+          color: '#fff',
+        },
+      });
+      return;
+    }
 
     const templateParams = {
       name: result.data.name,
@@ -39,19 +44,24 @@ export default function Contact() {
     setIsSubmitting(true);
 
     emailjs
-      .send(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string, process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string, templateParams, {
-        publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string,
-      })
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
+        templateParams,
+        { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string }
+      )
       .then(
         () => {
-          console.log('SUCCESS!');
-          toast.success('Thank you for reaching out! Your message has been received, and I\’ll respond as soon as possible.', {
-            duration: 2000,
-            style: {
-              background: '#10B981',
-              color: '#fff',
-            },
-          });
+          toast.success(
+            'Thank you for reaching out! Your message has been received, and I’ll respond as soon as possible.',
+            {
+              duration: 2000,
+              style: {
+                background: '#10B981',
+                color: '#fff',
+              },
+            }
+          );
         },
         (error) => {
           console.error('FAILED...', error);
@@ -62,34 +72,35 @@ export default function Contact() {
               color: '#fff',
             },
           });
-          
         }
       )
       .finally(() => {
         setIsSubmitting(false);
       });
   }
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    const formData = new FormData(event.target as HTMLFormElement);
+    formAction(formData);
+  };
+
+  if (!hasHydrated) {
+    // Prevents server-rendering until component has fully hydrated on client
+    return null;
+  }
+
   return (
     <section id="contact" className="py-20 bg-slate-50">
       <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
-        >
+        <div className="max-w-4xl mx-auto">
           <h2 className="flex items-center gap-3 text-2xl md:text-3xl font-bold mb-12 text-primary-600">
             <Mail className="w-8 h-8 text-primary-600" />
             Get In Touch
           </h2>
 
           <div className="grid md:grid-cols-2 gap-12">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
+            <div className="space-y-6">
               <h3 className="text-2xl font-semibold text-slate-800">Let&apos;s Connect</h3>
               <p className="text-lg text-slate-600">
                 I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
@@ -123,16 +134,9 @@ export default function Contact() {
                   <X className="w-5 h-5" />
                 </a>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.form
-             id='formId'
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="space-y-4"
-              action={formAction}
-            >
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-slate-600 mb-1">
                   Name
@@ -169,19 +173,13 @@ export default function Contact() {
               <button
                 type="submit"
                 className="w-full px-8 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+                disabled={isSubmitting}
               >
-               {isSubmitting ? (
-              <>
-                <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
-                Sending...
-              </>
-            ) : (
-              'Send Message'
-            )}
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
-            </motion.form>
+            </form>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

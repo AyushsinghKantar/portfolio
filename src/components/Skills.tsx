@@ -1,36 +1,48 @@
 import * as motion from "framer-motion/client"
 import { Cpu, Sparkles } from 'lucide-react';
+import { FaBootstrap } from "react-icons/fa";
+
 import {
   SiReact,
   SiTypescript,
   SiNextdotjs,
   SiTailwindcss,
-  SiStrapi,
   SiPostman,
   SiGit,
-  SiJenkins,
-  SiFlutter
+  SiAzurepipelines,
+  SiFigma,
+  SiMaterialformkdocs,
+  SiJquery,
+  SiUnderscoredotjs
+
+
+  
 } from 'react-icons/si';
-import { IoLogoJavascript, IoLogoCss3, IoLogoHtml5 } from "react-icons/io5";
+import { IoLogoJavascript, IoLogoCss3, IoLogoHtml5 , IoLogoAngular, IoLogoNodejs,  } from "react-icons/io5";
 
 const skills = {
   Frontend: [
     { name: 'JavaScript', icon: IoLogoJavascript, color: '#F7DF1E' },
-    { name: 'React', icon: SiReact, color: '#61DAFB' },
     { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
+    { name: 'Angular', icon: IoLogoAngular, color: '#F7DF1E' },
+    { name: 'React', icon: SiReact, color: '#61DAFB' },
     { name: 'Next.js', icon: SiNextdotjs, color: '#000000' },
-    { name: 'Flutter', icon: SiFlutter, color: '#02569B' },
+    { name: 'Underscore.js', icon: SiUnderscoredotjs, color: '#000000' },
+    { name: 'Jquery', icon: SiJquery, color: '#000000' },
     { name: 'HTML5', icon: IoLogoHtml5, color: '#E34F26' },
+    { name: 'CSS3', icon: IoLogoCss3, color: '#1572B6' },
+    { name: 'Bootstrap', icon: FaBootstrap, color: '#1572B6' },
+    { name: 'Material UI', icon:SiMaterialformkdocs , color: '#1572B6' },
     { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4' },
-    { name: 'CSS', icon: IoLogoCss3, color: '#1572B6' },
   ],
   Backend: [
-    { name: 'Strapi', icon: SiStrapi, color: '#4945ff' },
+    { name: 'Node.js', icon: IoLogoNodejs, color: '#4945ff' },
     { name: 'REST APIs', icon: SiPostman, color: '#FF6C37' },
   ],
   'Tools & Others': [
     { name: 'Git', icon: SiGit, color: '#F05032' },
-    { name: 'Jenkins', icon: SiJenkins, color: '#D24939' },
+    { name: 'Azure', icon: SiAzurepipelines, color: '#D24939' },
+    { name: 'Figma', icon: SiFigma, color: '#D24939'}
   ],
 };
 

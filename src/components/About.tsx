@@ -26,7 +26,7 @@ export default function About() {
               <p className="text-base md:text-lg text-slate-600 text-justify">
               As a dedicated Frontend Engineer, I&apos;ve a passion for crafting visually
       appealing and high-performance web applications. With hands-on experience
-      in technologies like React, Next.js, and Tailwind CSS, I specialize in
+      in technologies like <strong>Javascript, Typescript, Angular, React, Bootstrap, Material UI, SCSS and Tailwind CSS</strong> I specialize in
       building responsive, user-focused solutions that make a lasting impact.
               </p>
               <div className="flex items-start gap-3">
@@ -67,37 +67,37 @@ export default function About() {
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-primary-600 rounded-full" />
                   <span className="text-slate-600">
-                  1.6+ years of experience in frontend development
+                    3.10+ years of experience in frontend development
                   </span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-primary-600 rounded-full" />
                   <span className="text-slate-600">
-                  Proficient in React.js, Next.js, and Tailwind CSS
+                    Proficient in Angular, Javascript, React.js, Bootstrap and Tailwind CSS
                   </span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-primary-600 rounded-full" />
                   <span className="text-slate-600">
-                  Developed and optimized e-commerce and SaaS applications
+                    Developed and optimized Chat and Helpdesk application for ERP Software system
                   </span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-primary-600 rounded-full" />
                   <span className="text-slate-600">
-                  Integrated payment solutions with Stripe API
+                    Developed many features and optimized ROI Application
                   </span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-primary-600 rounded-full" />
                   <span className="text-slate-600">
-                  Hands-on experience with Strapi CMS and Prisma ORM
+                    Hands-on experience with Webworker , Highcharts, Socket etc.
                   </span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-primary-600 rounded-full" />
                   <span className="text-slate-600">
-                  Focused on performance optimization and user experience
+                    Writting unit test case and integrating with Azure pipeline
                   </span>
                 </li>
               </ul>
